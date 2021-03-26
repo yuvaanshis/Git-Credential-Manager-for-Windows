@@ -1,0 +1,56 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+Stage :
+   job-1:
+     step:
+    batch = true
+    echo "this is my build"
+
+
+   job-2:
+
+   job:-3:
+
+
+
+step:
+    python = true
+    print("this is my pythion script")
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+  self-hosted:test
+
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+  condition: 
+
+  artficats:
+    nuget- task: Ant@1
+  inputs:
+    buildFile: 'build.xml'
+    options: 
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    codeCoverageToolOptions: 'Cobertura'
+    codeCoverageClassFilesDirectories: '.'
+    javaHomeOption: 'JDKVersion'- task: DownloadPackage@1
+  inputs:
+    packageType: 'nuget'
+    feed: '/17041deb-3808-4e10-ad10-772b173cf4cf'
+    view: 'b84d5f9d-162a-4f18-91ae-8f707e170acb'
+    definition: 'nuget'
+    version: '1.2.3'
+    downloadPath: '$(System.ArtifactsDirectory)'
