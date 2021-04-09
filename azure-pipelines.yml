@@ -3,7 +3,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-Stage :
+Stage:
    job-1:
      step:
     batch = true
