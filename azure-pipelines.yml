@@ -19,16 +19,14 @@ steps:
   displayName: 'Run a multi-line script'
   condition: 
 
--artifacts:
-    nuget- task: Ant@1
+- task: DownloadPipelineArtifact@2
   inputs:
-    buildFile: 'build.xml'
-    options: 
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    codeCoverageToolOptions: 'Cobertura'
-    codeCoverageClassFilesDirectories: '.'
-    javaHomeOption: 'JDKVersion'
+    buildType: 'specific'
+    project: 'e25b368b-359c-46a1-b81c-fd33db997ac7'
+    definition: '12'
+    buildVersionToDownload: 'latest'
+    allowPartiallySucceededBuilds: true
+    targetPath: '$(Pipeline.Workspace)'
 - task: DownloadPackage@1
   inputs:
     packageType: 'nuget'
