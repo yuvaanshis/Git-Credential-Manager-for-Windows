@@ -28,7 +28,8 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     codeCoverageToolOptions: 'Cobertura'
     codeCoverageClassFilesDirectories: '.'
-    javaHomeOption: 'JDKVersion'- task: DownloadPackage@1
+    javaHomeOption: 'JDKVersion'
+- task: DownloadPackage@1
   inputs:
     packageType: 'nuget'
     feed: '/17041deb-3808-4e10-ad10-772b173cf4cf'
