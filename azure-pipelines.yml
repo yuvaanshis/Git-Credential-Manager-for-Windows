@@ -3,22 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-Stage:
-   job-1:
-     step:
-    batch = true
-    echo "this is my build"
-
-
-   job-2:
-
-   job:-3:
-
-
-
-step:
-    python = true
-    print("this is my pythion script")
 trigger:
 - master
 
