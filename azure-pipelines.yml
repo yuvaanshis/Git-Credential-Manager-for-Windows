@@ -8,8 +8,6 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  self-hosted:test
-
 
 steps:
 - script: echo Hello, world!
