@@ -19,7 +19,7 @@ steps:
   displayName: 'Run a multi-line script'
   condition: 
 
-artifacts:
+- artifacts:
     nuget- task: Ant@1
   inputs:
     buildFile: 'build.xml'
